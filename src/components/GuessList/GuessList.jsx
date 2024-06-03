@@ -2,11 +2,11 @@ import React from 'react';
 import './GuessList.css';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteGuess } from '../../redux/actions';
+import { deleteGuess } from '../../redux/reducers/colorSlice';
 
 export default function GuessList() {
-  const guesses = useSelector((state) => state.guesses);
-
+  const guesses = useSelector((state) => state.colorReducer.guesses);
+  console.log(guesses);
   const dispatch = useDispatch();
 
   const handleClick = () => {

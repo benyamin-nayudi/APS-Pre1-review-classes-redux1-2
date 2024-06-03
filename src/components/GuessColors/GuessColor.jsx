@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import './GuessColor.css';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  deleteGuess,
-  addGuess,
-  nextStep,
-  clearGuess,
-  clearStep,
-} from '../../redux/actions';
+import { addGuess, clearGuess, clearStep, nextStep } from '../../redux/reducers/colorSlice';
+// import {
+//   deleteGuess,
+//   addGuess,
+//   nextStep,
+//   clearGuess,
+//   clearStep,
+// } from '../../redux/actions';
 
 export default function GuessColor({ allColors, randomColors }) {
   const dispatch = useDispatch();
-  const guesses = useSelector((state) => state.guesses);
+  const guesses = useSelector((state) => state.colorReducer.guesses);
 
   const [fail, setFail] = useState(false);
 

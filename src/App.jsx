@@ -29,7 +29,7 @@ function getRandomColors(colorsArray, numberOfColors) {
 }
 
 function App() {
-  const step = useSelector((state) => state.step);
+  const step = useSelector((state) => state.colorReducer.step);
 
   const randomColor = getRandomColors([...colors], step);
   return (
